@@ -19,9 +19,9 @@
                     Simple. Affordable. Professional.
                 </p>
                 <a
-                    href="#pricing"
+                    href="#request"
                     class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-100"
-                    >Get Started</a
+                    >Request an Address</a
                 >
             </div>
         </section>
@@ -71,13 +71,74 @@
                         HKD $10<span class="text-lg">/mo</span>
                     </p>
                     <p class="mb-6">One custom email forwarding address</p>
+                    <p class="text-gray-600 mb-6">
+                        Bulk discount: 5 addresses for HKD $40/month
+                    </p>
                     <a
-                        href="#signup"
+                        href="#request"
                         class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-700"
-                        >Sign Up</a
+                        >Request Now</a
                     >
                 </div>
             </div>
+        </section>
+
+        <!-- Request Form -->
+        <section id="request" class="max-w-3xl mx-auto px-6 py-16">
+            <h2 class="text-3xl font-bold text-center mb-8">
+                Request an Address
+            </h2>
+            <form
+                action="mailto:your-email@example.com"
+                method="POST"
+                enctype="text/plain"
+                class="bg-white p-8 rounded-lg shadow space-y-6"
+            >
+                <div>
+                    <label class="block font-semibold mb-2"
+                        >Desired Address</label
+                    >
+                    <input
+                        type="text"
+                        name="desired_address"
+                        placeholder="e.g. name@cool.6489.uk"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2"
+                        required
+                    />
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2">Forward To</label>
+                    <input
+                        type="email"
+                        name="forward_to"
+                        placeholder="your-real-email@example.com"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2"
+                        required
+                    />
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2"
+                        >Your Contact Email</label
+                    >
+                    <input
+                        type="email"
+                        name="contact_email"
+                        placeholder="so we can reply to you"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2"
+                        required
+                    />
+                </div>
+                <button
+                    type="submit"
+                    class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-700"
+                >
+                    Submit Request
+                </button>
+            </form>
+            <p class="text-center text-gray-500 mt-6">
+                We will manually check availability and reply with payment
+                instructions.
+            </p>
         </section>
 
         <!-- Footer -->
