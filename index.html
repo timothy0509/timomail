@@ -5,94 +5,201 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>TimoMail - Your Personal Email Identity</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                font-family: "Poppins", sans-serif;
+            }
+            .glass {
+                background: rgba(255, 255, 255, 0.15);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+        </style>
     </head>
-    <body class="bg-gray-50 text-gray-900">
+    <body
+        class="bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-800 text-white"
+    >
         <!-- Hero Section -->
         <section
-            class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white"
+            class="min-h-screen flex items-center justify-center text-center px-6"
         >
-            <div class="max-w-6xl mx-auto px-6 py-20 text-center">
-                <h1 class="text-5xl font-bold mb-6">TimoMail</h1>
-                <p class="text-xl mb-8">
-                    Create your own unique email identity with
+            <div class="max-w-3xl">
+                <h1 class="text-6xl font-bold mb-6 drop-shadow-lg">TimoMail</h1>
+                <p class="text-xl mb-8 text-gray-200">
+                    Own a unique, professional email identity with
                     <strong>6489.uk</strong> or <strong>hkjc.uk</strong>.
-                    Simple. Affordable. Professional.
+                    Simple. Affordable. Memorable.
                 </p>
                 <a
                     href="#request"
-                    class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-100"
-                    >Request an Address</a
+                    class="bg-white text-blue-700 px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-gray-100 transition"
+                    >Request Your Address</a
                 >
             </div>
         </section>
 
         <!-- Features -->
-        <section class="max-w-6xl mx-auto px-6 py-16">
-            <h2 class="text-3xl font-bold text-center mb-12">Why TimoMail?</h2>
-            <div class="grid md:grid-cols-3 gap-10 text-center">
-                <div class="p-6 bg-white rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4">Custom Identity</h3>
+        <section
+            class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-10"
+        >
+            <div class="glass p-8 rounded-2xl shadow-lg text-center">
+                <h3 class="text-2xl font-semibold mb-4">Custom Identity</h3>
+                <p>
+                    Stand out with a personalized email like
+                    <strong>you@brand.6489.uk</strong> or
+                    <strong>me@cool.hkjc.uk</strong>. Perfect for students,
+                    freelancers, and small businesses.
+                </p>
+            </div>
+            <div class="glass p-8 rounded-2xl shadow-lg text-center">
+                <h3 class="text-2xl font-semibold mb-4">Affordable Pricing</h3>
+                <p>
+                    Just <strong>HKD $10/month</strong> per address. Bulk
+                    discounts available. A professional identity for less than a
+                    cup of coffee.
+                </p>
+            </div>
+            <div class="glass p-8 rounded-2xl shadow-lg text-center">
+                <h3 class="text-2xl font-semibold mb-4">
+                    Privacy & Simplicity
+                </h3>
+                <p>
+                    Protect your real inbox. Forward all emails to your existing
+                    account without hassle.
+                </p>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="max-w-5xl mx-auto px-6 py-20">
+            <h2 class="text-4xl font-bold text-center mb-12">How It Works</h2>
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-2">1. Request</h3>
                     <p>
-                        Choose any subdomain under <strong>6489.uk</strong> or
-                        <strong>hkjc.uk</strong> to create a unique email
-                        address that forwards to your inbox.
+                        Submit your desired email address and forwarding
+                        destination.
                     </p>
                 </div>
-                <div class="p-6 bg-white rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4">
-                        Affordable Pricing
-                    </h3>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-2">2. Confirm</h3>
                     <p>
-                        Just <strong>HKD $10/month</strong> per address.
-                        Discounts available for multiple addresses.
+                        We check availability and reply with payment
+                        instructions.
                     </p>
                 </div>
-                <div class="p-6 bg-white rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4">
-                        Privacy & Simplicity
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-2">3. Pay</h3>
+                    <p>Securely pay via PayPal, FPS, or bank transfer.</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-2">4. Enjoy</h3>
+                    <p>
+                        Your new email address is live and forwarding within 24
+                        hours.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="max-w-6xl mx-auto px-6 py-20">
+            <h2 class="text-4xl font-bold text-center mb-12">
+                What People Say
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-6 rounded-xl">
+                    <p class="italic">
+                        “I love my new email identity. It looks professional and
+                        keeps my personal inbox private.”
+                    </p>
+                    <p class="mt-4 font-semibold">— Alex, Freelancer</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <p class="italic">
+                        “For just $10 a month, I got an email that matches my
+                        brand. Clients take me more seriously now.”
+                    </p>
+                    <p class="mt-4 font-semibold">
+                        — Sarah, Small Business Owner
+                    </p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <p class="italic">
+                        “Super easy setup. I requested, paid, and had my new
+                        email working the next day.”
+                    </p>
+                    <p class="mt-4 font-semibold">— Jason, Student</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="max-w-4xl mx-auto px-6 py-20">
+            <h2 class="text-4xl font-bold text-center mb-12">FAQ</h2>
+            <div class="space-y-6">
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="font-semibold mb-2">
+                        Can I use the root @hkjc.uk?
                     </h3>
                     <p>
-                        Protect your real inbox while keeping a professional
-                        online presence.
+                        No, only subdomains are available for hkjc.uk (e.g.
+                        me@tim.hkjc.uk).
                     </p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="font-semibold mb-2">
+                        How many addresses can I buy?
+                    </h3>
+                    <p>
+                        As many as you like! Discounts apply for 5 or more
+                        addresses.
+                    </p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="font-semibold mb-2">
+                        How long does setup take?
+                    </h3>
+                    <p>Usually within 24 hours after payment confirmation.</p>
                 </div>
             </div>
         </section>
 
         <!-- Pricing -->
-        <section id="pricing" class="bg-gray-100 py-16">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold mb-8">Pricing</h2>
-                <div
-                    class="bg-white rounded-lg shadow p-8 max-w-md mx-auto border border-gray-200"
+        <section id="pricing" class="max-w-4xl mx-auto px-6 py-20 text-center">
+            <h2 class="text-4xl font-bold mb-8">Pricing</h2>
+            <div class="glass p-10 rounded-2xl shadow-lg inline-block">
+                <h3 class="text-2xl font-semibold mb-4">Per Address</h3>
+                <p class="text-5xl font-bold mb-4">
+                    HKD $10<span class="text-lg">/mo</span>
+                </p>
+                <p class="mb-6">One custom email forwarding address</p>
+                <p class="text-gray-200 mb-6">
+                    Bulk discount: 5 addresses for HKD $40/month
+                </p>
+                <a
+                    href="#request"
+                    class="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-100 transition"
+                    >Request Now</a
                 >
-                    <h3 class="text-2xl font-semibold mb-4">Per Address</h3>
-                    <p class="text-4xl font-bold mb-4">
-                        HKD $10<span class="text-lg">/mo</span>
-                    </p>
-                    <p class="mb-6">One custom email forwarding address</p>
-                    <p class="text-gray-600 mb-6">
-                        Bulk discount: 5 addresses for HKD $40/month
-                    </p>
-                    <a
-                        href="#request"
-                        class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-700"
-                        >Request Now</a
-                    >
-                </div>
             </div>
         </section>
 
         <!-- Request Form -->
-        <section id="request" class="max-w-3xl mx-auto px-6 py-16">
-            <h2 class="text-3xl font-bold text-center mb-8">
+        <section id="request" class="max-w-3xl mx-auto px-6 py-20">
+            <h2 class="text-4xl font-bold text-center mb-8">
                 Request an Address
             </h2>
             <form
                 action="mailto:your-email@example.com"
                 method="POST"
                 enctype="text/plain"
-                class="bg-white p-8 rounded-lg shadow space-y-6"
+                class="glass p-10 rounded-2xl shadow-lg space-y-6"
             >
                 <div>
                     <label class="block font-semibold mb-2"
@@ -102,7 +209,7 @@
                         type="text"
                         name="desired_address"
                         placeholder="e.g. name@cool.6489.uk"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-black"
                         required
                     />
                 </div>
@@ -112,7 +219,7 @@
                         type="email"
                         name="forward_to"
                         placeholder="your-real-email@example.com"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-black"
                         required
                     />
                 </div>
@@ -124,25 +231,25 @@
                         type="email"
                         name="contact_email"
                         placeholder="so we can reply to you"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-black"
                         required
                     />
                 </div>
                 <button
                     type="submit"
-                    class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-700"
+                    class="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-100 transition"
                 >
                     Submit Request
                 </button>
             </form>
-            <p class="text-center text-gray-500 mt-6">
+            <p class="text-center text-gray-200 mt-6">
                 We will manually check availability and reply with payment
                 instructions.
             </p>
         </section>
 
         <!-- Footer -->
-        <footer class="bg-gray-900 text-gray-400 py-8 text-center">
+        <footer class="bg-black bg-opacity-50 text-gray-300 py-8 text-center">
             <p>&copy; 2025 TimoMail. All rights reserved.</p>
         </footer>
     </body>
