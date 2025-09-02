@@ -1,256 +1,451 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>TimoMail - Your Personal Email Identity</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
             rel="stylesheet"
         />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
         <style>
             body {
+                font-family: "Inter", sans-serif;
+                transition:
+                    background 0.5s,
+                    color 0.5s;
+            }
+            h1,
+            h2,
+            h3 {
                 font-family: "Poppins", sans-serif;
+            }
+            .gradient-text {
+                background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
             .glass {
                 background: rgba(255, 255, 255, 0.15);
                 backdrop-filter: blur(12px);
                 -webkit-backdrop-filter: blur(12px);
                 border: 1px solid rgba(255, 255, 255, 0.2);
+                transition: all 0.3s ease;
+            }
+            .glass:hover {
+                transform: translateY(-6px) scale(1.02);
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+            }
+            .fade-in {
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 1s ease forwards;
+            }
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            a,
+            button {
+                transition: all 0.3s ease;
+            }
+            a:hover,
+            button:hover {
+                transform: scale(1.05);
+            }
+            /* small input focus polish */
+            input:focus,
+            textarea:focus {
+                outline: none;
+                box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
             }
         </style>
     </head>
     <body
-        class="bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-800 text-white"
+        class="dark:bg-gradient-to-br dark:from-blue-900 dark:via-indigo-900 dark:to-purple-900 dark:text-white bg-gray-50 text-gray-900 relative overflow-x-hidden"
     >
+        <!-- Navbar -->
+        <header class="fixed top-0 left-0 w-full z-50 bg-opacity-30 glass">
+            <div
+                class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4"
+            >
+                <!-- Wordmark Logo -->
+                <a href="#hero" class="flex items-center space-x-3">
+                    <img src="logo.svg" alt="TimoMail Logo" class="h-10" />
+                </a>
+                <!-- Nav Links -->
+                <nav class="space-x-6 hidden md:block">
+                    <a
+                        href="#features"
+                        class="hover:text-blue-300 dark:hover:text-blue-300"
+                        >Features</a
+                    >
+                    <a
+                        href="#pricing"
+                        class="hover:text-blue-300 dark:hover:text-blue-300"
+                        >Pricing</a
+                    >
+                    <a
+                        href="#faq"
+                        class="hover:text-blue-300 dark:hover:text-blue-300"
+                        >FAQ</a
+                    >
+                    <a
+                        href="#request"
+                        class="bg-white text-blue-700 px-4 py-2 rounded-lg font-semibold shadow hover:bg-gray-100"
+                        >Request</a
+                    >
+                </nav>
+                <!-- Theme Toggle -->
+                <button
+                    id="theme-toggle"
+                    class="ml-4 p-2 rounded-lg bg-white text-blue-700 shadow hover:bg-gray-100"
+                    aria-label="Toggle theme"
+                >
+                    🌙
+                </button>
+            </div>
+        </header>
+
         <!-- Hero Section -->
         <section
-            class="min-h-screen flex items-center justify-center text-center px-6"
+            id="hero"
+            class="relative min-h-screen flex items-center justify-center text-center px-6"
         >
-            <div class="max-w-3xl">
-                <h1 class="text-6xl font-bold mb-6 drop-shadow-lg">TimoMail</h1>
-                <p class="text-xl mb-8 text-gray-200">
-                    Own a unique, professional email identity with
-                    <strong>6489.uk</strong> or <strong>hkjc.uk</strong>.
-                    Simple. Affordable. Memorable.
+            <div class="max-w-3xl mt-20">
+                <h1 class="text-6xl font-bold mb-6 gradient-text">
+                    Your Personal Email Identity
+                </h1>
+                <p
+                    class="text-xl mb-8 text-gray-200 dark:text-gray-200 text-gray-700"
+                >
+                    Create a unique email with <strong>6489.uk</strong> or
+                    <strong>hkjc.uk</strong>. <br />
+                    Professional. Private. Affordable.
                 </p>
                 <a
                     href="#request"
-                    class="bg-white text-blue-700 px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-gray-100 transition"
+                    class="bg-white text-blue-700 px-8 py-4 rounded-xl font-semibold shadow-lg hover:bg-gray-100 transition"
                     >Request Your Address</a
                 >
             </div>
         </section>
 
         <!-- Features -->
-        <section
-            class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-10"
-        >
-            <div class="glass p-8 rounded-2xl shadow-lg text-center">
-                <h3 class="text-2xl font-semibold mb-4">Custom Identity</h3>
-                <p>
-                    Stand out with a personalized email like
-                    <strong>you@brand.6489.uk</strong> or
-                    <strong>me@cool.hkjc.uk</strong>. Perfect for students,
-                    freelancers, and small businesses.
-                </p>
-            </div>
-            <div class="glass p-8 rounded-2xl shadow-lg text-center">
-                <h3 class="text-2xl font-semibold mb-4">Affordable Pricing</h3>
-                <p>
-                    Just <strong>HKD $10/month</strong> per address. Bulk
-                    discounts available. A professional identity for less than a
-                    cup of coffee.
-                </p>
-            </div>
-            <div class="glass p-8 rounded-2xl shadow-lg text-center">
-                <h3 class="text-2xl font-semibold mb-4">
-                    Privacy & Simplicity
-                </h3>
-                <p>
-                    Protect your real inbox. Forward all emails to your existing
-                    account without hassle.
-                </p>
-            </div>
-        </section>
-
-        <!-- How It Works -->
-        <section class="max-w-5xl mx-auto px-6 py-20">
-            <h2 class="text-4xl font-bold text-center mb-12">How It Works</h2>
-            <div class="grid md:grid-cols-4 gap-8 text-center">
-                <div class="glass p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold mb-2">1. Request</h3>
-                    <p>
-                        Submit your desired email address and forwarding
-                        destination.
-                    </p>
-                </div>
-                <div class="glass p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold mb-2">2. Confirm</h3>
-                    <p>
-                        We check availability and reply with payment
-                        instructions.
-                    </p>
-                </div>
-                <div class="glass p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold mb-2">3. Pay</h3>
-                    <p>Securely pay via PayPal, FPS, or bank transfer.</p>
-                </div>
-                <div class="glass p-6 rounded-xl">
-                    <h3 class="text-xl font-semibold mb-2">4. Enjoy</h3>
-                    <p>
-                        Your new email address is live and forwarding within 24
-                        hours.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section class="max-w-6xl mx-auto px-6 py-20">
-            <h2 class="text-4xl font-bold text-center mb-12">
-                What People Say
+        <section id="features" class="max-w-6xl mx-auto px-6 py-20">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+                Why Choose TimoMail?
             </h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass p-6 rounded-xl">
-                    <p class="italic">
-                        “I love my new email identity. It looks professional and
-                        keeps my personal inbox private.”
-                    </p>
-                    <p class="mt-4 font-semibold">— Alex, Freelancer</p>
-                </div>
-                <div class="glass p-6 rounded-xl">
-                    <p class="italic">
-                        “For just $10 a month, I got an email that matches my
-                        brand. Clients take me more seriously now.”
-                    </p>
-                    <p class="mt-4 font-semibold">
-                        — Sarah, Small Business Owner
+            <div class="grid md:grid-cols-3 gap-10">
+                <div
+                    class="glass p-8 rounded-2xl shadow-lg text-center fade-in"
+                >
+                    <h3 class="text-2xl font-semibold mb-4">Custom Identity</h3>
+                    <p>
+                        Stand out with a unique email like
+                        <strong>you@brand.6489.uk</strong>. Perfect for personal
+                        branding, resumes, or small businesses.
                     </p>
                 </div>
-                <div class="glass p-6 rounded-xl">
-                    <p class="italic">
-                        “Super easy setup. I requested, paid, and had my new
-                        email working the next day.”
-                    </p>
-                    <p class="mt-4 font-semibold">— Jason, Student</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="max-w-4xl mx-auto px-6 py-20">
-            <h2 class="text-4xl font-bold text-center mb-12">FAQ</h2>
-            <div class="space-y-6">
-                <div class="glass p-6 rounded-xl">
-                    <h3 class="font-semibold mb-2">
-                        Can I use the root @hkjc.uk?
+                <div
+                    class="glass p-8 rounded-2xl shadow-lg text-center fade-in"
+                    style="animation-delay: 0.2s"
+                >
+                    <h3 class="text-2xl font-semibold mb-4">
+                        Affordable Pricing
                     </h3>
                     <p>
-                        No, only subdomains are available for hkjc.uk (e.g.
-                        me@tim.hkjc.uk).
+                        Just <strong>HKD $10/month</strong> per address. Bulk
+                        discounts available for multiple addresses.
                     </p>
                 </div>
-                <div class="glass p-6 rounded-xl">
-                    <h3 class="font-semibold mb-2">
-                        How many addresses can I buy?
+                <div
+                    class="glass p-8 rounded-2xl shadow-lg text-center fade-in"
+                    style="animation-delay: 0.4s"
+                >
+                    <h3 class="text-2xl font-semibold mb-4">
+                        Privacy & Simplicity
                     </h3>
                     <p>
-                        As many as you like! Discounts apply for 5 or more
-                        addresses.
+                        Protect your real inbox. Forward emails seamlessly while
+                        keeping your personal address private.
                     </p>
-                </div>
-                <div class="glass p-6 rounded-xl">
-                    <h3 class="font-semibold mb-2">
-                        How long does setup take?
-                    </h3>
-                    <p>Usually within 24 hours after payment confirmation.</p>
                 </div>
             </div>
         </section>
 
         <!-- Pricing -->
-        <section id="pricing" class="max-w-4xl mx-auto px-6 py-20 text-center">
-            <h2 class="text-4xl font-bold mb-8">Pricing</h2>
-            <div class="glass p-10 rounded-2xl shadow-lg inline-block">
-                <h3 class="text-2xl font-semibold mb-4">Per Address</h3>
-                <p class="text-5xl font-bold mb-4">
-                    HKD $10<span class="text-lg">/mo</span>
-                </p>
-                <p class="mb-6">One custom email forwarding address</p>
-                <p class="text-gray-200 mb-6">
-                    Bulk discount: 5 addresses for HKD $40/month
-                </p>
-                <a
-                    href="#request"
-                    class="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-100 transition"
-                    >Request Now</a
+        <section id="pricing" class="py-20 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-12 gradient-text">
+                    Simple Pricing
+                </h2>
+                <div
+                    class="glass p-10 rounded-2xl shadow-xl max-w-md mx-auto fade-in"
                 >
+                    <h3 class="text-2xl font-semibold mb-4">Per Address</h3>
+                    <p class="text-5xl font-bold mb-4">
+                        HKD $10<span class="text-lg">/mo</span>
+                    </p>
+                    <p class="mb-6">One custom email forwarding address</p>
+                    <p
+                        class="text-gray-200 dark:text-gray-200 text-gray-700 mb-6"
+                    >
+                        Bulk discount: 5 addresses for HKD $40/month
+                    </p>
+                    <a
+                        href="#request"
+                        class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-100"
+                        >Request Now</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="py-20 px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+                    FAQ
+                </h2>
+                <div class="space-y-6">
+                    <div class="glass p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-2">
+                            How does email forwarding work?
+                        </h3>
+                        <p>
+                            You choose an address under
+                            <strong>6489.uk</strong> or
+                            <strong>hkjc.uk</strong>. All emails sent there are
+                            forwarded to your real inbox.
+                        </p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-2">
+                            Can I send emails from my TimoMail address?
+                        </h3>
+                        <p>
+                            By default, forwarding is receive-only. However, you
+                            can configure your email client (like Gmail or
+                            Outlook) to send using your TimoMail address.
+                        </p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-2">
+                            What if the address I want is taken?
+                        </h3>
+                        <p>
+                            We’ll let you know and help you choose an
+                            alternative before you pay. No risk of paying for
+                            unavailable addresses.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Request Form -->
-        <section id="request" class="max-w-3xl mx-auto px-6 py-20">
-            <h2 class="text-4xl font-bold text-center mb-8">
-                Request an Address
-            </h2>
-            <form
-                action="mailto:your-email@example.com"
-                method="POST"
-                enctype="text/plain"
-                class="glass p-10 rounded-2xl shadow-lg space-y-6"
-            >
-                <div>
-                    <label class="block font-semibold mb-2"
-                        >Desired Address</label
-                    >
-                    <input
-                        type="text"
-                        name="desired_address"
-                        placeholder="e.g. name@cool.6489.uk"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-black"
-                        required
-                    />
-                </div>
-                <div>
-                    <label class="block font-semibold mb-2">Forward To</label>
-                    <input
-                        type="email"
-                        name="forward_to"
-                        placeholder="your-real-email@example.com"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-black"
-                        required
-                    />
-                </div>
-                <div>
-                    <label class="block font-semibold mb-2"
-                        >Your Contact Email</label
-                    >
-                    <input
-                        type="email"
-                        name="contact_email"
-                        placeholder="so we can reply to you"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-black"
-                        required
-                    />
-                </div>
-                <button
-                    type="submit"
-                    class="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-100 transition"
+        <section id="request" class="py-20 px-6">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-8 gradient-text">
+                    Request an Address
+                </h2>
+
+                <!-- Note: form action fallback uses mailto:requests@hkjc.uk for non-JS users.
+             With JS enabled we build a clearer subject/body and open the email client. -->
+                <form
+                    id="request-form"
+                    action="mailto:requests@hkjc.uk"
+                    method="POST"
+                    enctype="text/plain"
+                    class="glass p-10 rounded-2xl shadow-xl space-y-6"
                 >
-                    Submit Request
-                </button>
-            </form>
-            <p class="text-center text-gray-200 mt-6">
-                We will manually check availability and reply with payment
-                instructions.
-            </p>
+                    <div>
+                        <label
+                            class="block font-semibold mb-2"
+                            for="desired_address"
+                            >Desired Address</label
+                        >
+                        <input
+                            id="desired_address"
+                            name="desired_address"
+                            type="text"
+                            placeholder="e.g. name@cool.6489.uk"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-900"
+                            required
+                        />
+                    </div>
+
+                    <div>
+                        <label class="block font-semibold mb-2" for="forward_to"
+                            >Forward To</label
+                        >
+                        <input
+                            id="forward_to"
+                            name="forward_to"
+                            type="email"
+                            placeholder="your-real-email@example.com"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-900"
+                            required
+                        />
+                    </div>
+
+                    <div>
+                        <label
+                            class="block font-semibold mb-2"
+                            for="contact_email"
+                            >Your Contact Email</label
+                        >
+                        <input
+                            id="contact_email"
+                            name="contact_email"
+                            type="email"
+                            placeholder="so we can reply to you"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-900"
+                            required
+                        />
+                    </div>
+
+                    <div>
+                        <label class="block font-semibold mb-2" for="notes"
+                            >Notes (optional)</label
+                        >
+                        <textarea
+                            id="notes"
+                            name="notes"
+                            rows="4"
+                            placeholder="Any extra details (e.g. alternative addresses you'd accept, preferred start date, notes)"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-900"
+                        ></textarea>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <button
+                            type="submit"
+                            class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-100"
+                        >
+                            Prepare Email to Request
+                        </button>
+                        <p class="text-sm text-gray-300 dark:text-gray-300">
+                            This will open your email client with a prepared
+                            message to requests@hkjc.uk — review and send to
+                            submit your request.
+                        </p>
+                    </div>
+                </form>
+
+                <p
+                    class="text-center text-gray-300 dark:text-gray-300 text-gray-600 mt-6"
+                >
+                    We will manually check availability and reply with payment
+                    instructions.
+                </p>
+            </div>
         </section>
 
         <!-- Footer -->
-        <footer class="bg-black bg-opacity-50 text-gray-300 py-8 text-center">
+        <footer
+            class="bg-gray-900 dark:bg-gray-900 text-gray-400 py-8 text-center"
+        >
+            <img src="logo.svg" alt="TimoMail Logo" class="mx-auto mb-4 h-8" />
             <p>&copy; 2025 TimoMail. All rights reserved.</p>
         </footer>
+
+        <!-- Smooth Scroll + Theme Toggle + mailto-builder -->
+        <script>
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    document
+                        .querySelector(this.getAttribute("href"))
+                        .scrollIntoView({
+                            behavior: "smooth",
+                        });
+                });
+            });
+
+            // Theme toggle
+            const themeToggle = document.getElementById("theme-toggle");
+            const html = document.documentElement;
+            if (localStorage.getItem("theme") === "light") {
+                html.classList.remove("dark");
+                themeToggle.textContent = "☀️";
+            }
+            themeToggle.addEventListener("click", () => {
+                if (html.classList.contains("dark")) {
+                    html.classList.remove("dark");
+                    localStorage.setItem("theme", "light");
+                    themeToggle.textContent = "☀️";
+                } else {
+                    html.classList.add("dark");
+                    localStorage.setItem("theme", "dark");
+                    themeToggle.textContent = "🌙";
+                }
+            });
+
+            // Mailto builder for request form
+            (function () {
+                const form = document.getElementById("request-form");
+                if (!form) return;
+
+                form.addEventListener("submit", function (e) {
+                    // Build mailto in JS so subject/body are clear and structured.
+                    // Prevent default so we can open the prepared mailto link.
+                    e.preventDefault();
+
+                    const desired = (
+                        form.elements["desired_address"]?.value || ""
+                    ).trim();
+                    const forwardTo = (
+                        form.elements["forward_to"]?.value || ""
+                    ).trim();
+                    const contact = (
+                        form.elements["contact_email"]?.value || ""
+                    ).trim();
+                    const notes = (form.elements["notes"]?.value || "").trim();
+
+                    // Basic validation
+                    if (!desired || !forwardTo || !contact) {
+                        alert(
+                            "Please fill in Desired Address, Forward To and Your Contact Email.",
+                        );
+                        return;
+                    }
+
+                    const subjectRaw = `TimoMail Address Request: ${desired}`;
+                    const bodyRaw =
+                        "TimoMail Address Request" +
+                        "\r\n\r\n" +
+                        "Desired address: " +
+                        desired +
+                        "\r\n" +
+                        "Forward to: " +
+                        forwardTo +
+                        "\r\n" +
+                        "Contact email: " +
+                        contact +
+                        "\r\n\r\n" +
+                        "Notes / additional info:" +
+                        "\r\n" +
+                        (notes || "[none]") +
+                        "\r\n\r\n" +
+                        "--" +
+                        "\r\n" +
+                        "Sent from TimoMail website";
+
+                    const mailto = `mailto:requests@hkjc.uk?subject=${encodeURIComponent(
+                        subjectRaw,
+                    )}&body=${encodeURIComponent(bodyRaw)}`;
+
+                    // open user's mail client
+                    window.location.href = mailto;
+                });
+            })();
+        </script>
     </body>
 </html>
